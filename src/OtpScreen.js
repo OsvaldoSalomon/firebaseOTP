@@ -35,26 +35,25 @@ const OtpScreen = () => {
             console.log('Error authenticating:', err);
         }
     }
+
+    return (
+        <View>
+            <Text>Enter your phone number:</Text>
+            <TextInput
+                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                onChangeText={(text) => setPhoneNumber(text)}
+                value={phoneNumber}
+            />
+            <Button title="Send verification code" onPress={sendVerificationCode} />
+            <Text>Enter verification code:</Text>
+            <TextInput
+                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                onChangeText={(text) => setVerificationCode(text)}
+                value={verificationCode}
+            />
+            <Button title="Verify code" onPress={verifyCode} />
+        </View>
+    )
 };
-
-return (
-    <View>
-        <Text>Enter your phone number:</Text>
-        <TextInput
-            style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-            onChangeText={(text) => setPhoneNumber(text)}
-            value={phoneNumber}
-        />
-        <Button title="Send verification code" onPress={sendVerificationCode} />
-        <Text>Enter verification code:</Text>
-        <TextInput
-            style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-            onChangeText={(text) => setVerificationCode(text)}
-            value={verificationCode}
-        />
-        <Button title="Verify code" onPress={verifyCode} />
-    </View>
-)
-
 
 export default OtpScreen;
